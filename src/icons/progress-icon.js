@@ -1,14 +1,13 @@
 import * as React from "react";
 import Svg, { G, Path, Ellipse } from "react-native-svg";
 
-const Dumbbell = () => {
+const ProgressIcon = () => {
   return (
     <Svg
       height={50}
-      viewBox="0 0 400 400"
+      viewBox="0 0 420 420"
       width={50}
       fill="white"
-      stroke="#ff4500"
       fillRule={'evenodd'}
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -18,4 +17,4 @@ const Dumbbell = () => {
   )
 }
 
-export default Dumbbell
+export default ProgressIcon
