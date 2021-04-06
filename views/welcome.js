@@ -43,8 +43,8 @@ const WelcomeView = ({ navigation }) => {
         </View>
       </View>
       <View style={{ flexDirection: 'row', marginTop: 25 }}>
-        <TouchableOpacity activeOpacity={0.8} style={styles.button} onPress={() => navigation.navigate('Join')}>
-          <Text style={styles.buttonText}>GET STARTED</Text>
+        <TouchableOpacity activeOpacity={0.8} style={styles.button} onPress={() => navigation.navigate('Home')}>
+          <Text style={styles.buttonText}>TRACK EXERCISES</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

@@ -5,7 +5,7 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import WelcomeView from './views/welcome';
-import JoinView from './views/join';
+import HomeView from './views/home';
 
 const Stack = createStackNavigator();
 
@@ -17,13 +17,13 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="Home"
+            name="Welcome"
             component={WelcomeView}
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="Join"
-            component={JoinView}
+            name="Home"
+            component={HomeView}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
