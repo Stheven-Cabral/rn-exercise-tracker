@@ -1,54 +1,66 @@
 // React hooks are supported in react native.
-import React, { useState } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import * as React from 'react';
 import {
   StyleSheet,
   Text,
   View,
   SafeAreaView,
-  Button,
-  FlatList,
   Dimensions,
   TouchableOpacity
 } from 'react-native';
 import ProgressIcon from '../src/icons/progress-icon';
 import DumbbellIcon from '../src/icons/dumbbell-icon';
 import StarIcon from '../src/icons/star-icon';
+import AppLoading from 'expo-app-loading';
+import { useFonts } from 'expo-font';
+import { 
+  BenchNine_300Light,
+  BenchNine_400Regular,
+  BenchNine_700Bold 
+} from '@expo-google-fonts/benchnine'
 
 const WelcomeView = ({ navigation }) => {
+  let [fontsLoaded] = useFonts({
+    BenchNine_300Light,
+    BenchNine_400Regular,
+    BenchNine_700Bold
+  });
 
-  return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Welcome to <Text style={{ color: '#5fc989' }}>MaxRep</Text></Text>
-      <View style={styles.introItem}>
-        <DumbbellIcon />
-        <View style={styles.textItems}>
-          <Text style={[styles.text, { color: '#5fc989' }]}>Track your pushups</Text>
-          <Text style={styles.text}>A simple, hassel free, quick tracker for your workouts.</Text>
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
+    return (
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.title}>Welcome to <Text style={{ color: '#5fc989' }}>MaxRep</Text></Text>
+        <View style={styles.introItem}>
+          <DumbbellIcon />
+          <View style={styles.textItems}>
+            <Text style={[styles.text, { color: '#5fc989', fontFamily: 'BenchNine_300Light' }]}>Track your pushups</Text>
+            <Text style={styles.text}>A simple, hassel free, quick tracker for your workouts.</Text>
+          </View>
         </View>
-      </View>
-      <View style={styles.introItem}>
-        <StarIcon />
-        <View style={styles.textItems}>
-          <Text style={[styles.text, { color: '#5fc989' }]}>Get motivated</Text>
-          <Text style={styles.text}>It only takes 15 minutes a day to be a push up champion.</Text>
+        <View style={styles.introItem}>
+          <StarIcon />
+          <View style={styles.textItems}>
+            <Text style={[styles.text, { color: '#5fc989', fontFamily: 'BenchNine_300Light' }]}>Get motivated</Text>
+            <Text style={styles.text}>It only takes 15 minutes a day to be a push up champion.</Text>
+          </View>
         </View>
-      </View>
-      <View style={styles.introItem}>
-        <ProgressIcon />
-        <View style={styles.textItems}>
-          <Text style={[styles.text, { color: '#5fc989' }]}>Make progress</Text>
-          <Text style={styles.text}>See your numbers and your strength increase weekly. Lorem ipsum Lorem ipsum Lorem ipsum</Text>
+        <View style={styles.introItem}>
+          <ProgressIcon />
+          <View style={styles.textItems}>
+            <Text style={[styles.text, { fontFamily: 'BenchNine_300Light', color: '#5fc989' }]}>Make progress</Text>
+            <Text style={styles.text}>See your numbers and your strength increase weekly. Lorem ipsum Lorem ipsum Lorem ipsum</Text>
+          </View>
         </View>
-      </View>
-      <View style={{ flexDirection: 'row', marginTop: 25 }}>
-        <TouchableOpacity activeOpacity={0.8} style={styles.button} onPress={() => navigation.navigate('Home')}>
-          <Text style={styles.buttonText}>TRACK EXERCISES</Text>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
-  );
+        <View style={{ flexDirection: 'row', marginTop: 25 }}>
+          <TouchableOpacity activeOpacity={0.8} style={styles.button} onPress={() => navigation.navigate('Home')}>
+            <Text style={styles.buttonText}>TRACK EXERCISES</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    );
+  }
 }
 
 const styles = StyleSheet.create({

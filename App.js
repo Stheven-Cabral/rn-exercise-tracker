@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-// import 'react-native-gesture-handler';
+import 'react-native-gesture-handler';
 import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
