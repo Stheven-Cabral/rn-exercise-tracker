@@ -13,10 +13,10 @@ import DumbbellIcon from '../src/icons/dumbbell-icon';
 import StarIcon from '../src/icons/star-icon';
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
-import { 
+import {
   BenchNine_300Light,
   BenchNine_400Regular,
-  BenchNine_700Bold 
+  BenchNine_700Bold
 } from '@expo-google-fonts/benchnine'
 
 const WelcomeView = ({ navigation }) => {
@@ -35,21 +35,21 @@ const WelcomeView = ({ navigation }) => {
         <View style={styles.introItem}>
           <DumbbellIcon />
           <View style={styles.textItems}>
-            <Text style={[styles.text, { color: '#5fc989', fontFamily: 'BenchNine_300Light' }]}>Track your pushups</Text>
+            <Text style={[styles.text, { color: '#5fc989' }]}>Track your pushups</Text>
             <Text style={styles.text}>A simple, hassel free, quick tracker for your workouts.</Text>
           </View>
         </View>
         <View style={styles.introItem}>
           <StarIcon />
           <View style={styles.textItems}>
-            <Text style={[styles.text, { color: '#5fc989', fontFamily: 'BenchNine_300Light' }]}>Get motivated</Text>
+            <Text style={[styles.text, { color: '#5fc989' }]}>Get motivated</Text>
             <Text style={styles.text}>It only takes 15 minutes a day to be a push up champion.</Text>
           </View>
         </View>
         <View style={styles.introItem}>
           <ProgressIcon />
           <View style={styles.textItems}>
-            <Text style={[styles.text, { fontFamily: 'BenchNine_300Light', color: '#5fc989' }]}>Make progress</Text>
+            <Text style={[styles.text, { color: '#5fc989' }]}>Make progress</Text>
             <Text style={styles.text}>See your numbers and your strength increase weekly. Lorem ipsum Lorem ipsum Lorem ipsum</Text>
           </View>
         </View>
